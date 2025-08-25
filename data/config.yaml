@@ -1,0 +1,51 @@
+# 短视频合并工具配置文件
+
+# 日志配置
+logging:
+  # 日志文件名
+  filename: "app.log"
+  # 日志等级 (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  level: "DEBUG"
+  # 日志格式
+  format: "%(asctime)s [%(levelname)s] %(message)s"
+  # 日期格式
+  date_format: "%Y-%m-%d %H:%M:%S"
+
+# 默认配置
+defaults:
+  # 默认源目录
+  src_dir: ""
+  # 默认输出目录
+  output_dir: ""
+  # 默认季数
+  season: "01"
+  # 默认起始集数
+  episode: "01"
+  # 默认最大时长限制（分钟），0表示无限制
+  max_duration: 60
+  # 默认最大体积限制（MB），0表示无限制
+  max_size: 1000
+  # TMDB API密钥，需要从 https://www.themoviedb.org/settings/api 申请
+  tmdb_api_key: ""
+  # 代理URL（可选），如果需要使用代理访问TMDB
+  tmdb_proxy_url: "http://192.168.0.123:7890"
+
+# 视频处理配置
+video:
+  # 支持的视频格式
+  extensions:
+    - ".mp4"
+    - ".mkv"
+    - ".mov"
+    - ".avi"
+    - ".flv"
+    - ".wmv"
+  # ffprobe超时时间（秒）
+  ffprobe_timeout: 10
+  # ffmpeg合并超时时间（秒）
+  ffmpeg_timeout: 300
+  # 视频元数据检查字段
+  required_metadata:
+    - "width"
+    - "height"
+    - "video_codec"

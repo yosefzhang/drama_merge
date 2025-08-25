@@ -1,0 +1,14 @@
+services:
+  drama-merge:
+    container_name: drama_merge
+    image: docker-drama_merge:latest
+    ports:
+      - "9280:8080"
+    volumes:
+      # 将主机目录挂载到容器中，以便访问视频文件
+      - /vol2/1000/app/drama_merge/data:/app/data
+      - /vol1/1000/16t/media:/16t-media
+    environment:
+      - PYTHONPATH=/app
+    restart: always
+    network_mode: bridge

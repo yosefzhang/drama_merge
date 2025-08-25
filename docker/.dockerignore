@@ -1,0 +1,21 @@
+# 排除版本控制目录
+.git
+.gitignore
+
+# 排除Python缓存和编译文件
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# 排除日志文件
+*.log
+
+# 排除IDE配置文件
+.vscode/
+.idea/
+
+# 排除临时文件
+*.tmp
+*.temp

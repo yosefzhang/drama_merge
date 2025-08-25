@@ -1,0 +1,1 @@
+sudo docker build -t docker-drama_merge:latest -f docker/Dockerfile .
